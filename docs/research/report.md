@@ -1,72 +1,79 @@
 # ЛР 2 — обоснование актуальности ВКР
 
-**Тема ВКР:** Разработка алгоритма подбора кандидатов на проектные роли на основе графа компетенций при неполных данных профиля
+**Тема ВКР:** Разработка модуля подбора кандидатов на проектные роли на основе графа компетенций при неполных данных профиля
 
 ## 1. Кто занимается темой
 
 ### Исследователи и разработчики
 
-- **Anna Giabelli** — рекомендации профессий по навыкам, Skills2Job и Skills2Graph [1, 2].
-- **Fabio Mercorio** — графовые методы анализа навыков и рынка труда [1, 2].
-- **Vadim Zadykian** — объединение графов знаний и эмбеддингов для сопоставления должностей [3].
+- [**Anna Giabelli**](https://scholar.google.com/citations?user=D68lYtgAAAAJ&hl=en) — рекомендации профессий по навыкам, Skills2Job и Skills2Graph .
+- [**Fabio Mercorio**](https://scholar.google.com/citations?user=BpjjTu0AAAAJ&hl=en) — графовые методы анализа навыков и рынка труда.
+- [**Vadim Zadykian**](https://www.researchgate.net/profile/Vadim-Zadykian) — объединение графов знаний и эмбеддингов для сопоставления должностей.
 
 ### Организации
 
-- **University of Milano-Bicocca** — исследования Skills2Job и Skills2Graph [1, 2].
-- **ADAPT Centre, Munster Technological University** — гибридное сопоставление должностей [3].
-- Ozon, Wildberries, МегаМаркет - сопоставление карточек товаров
+- **[University of Milano-Bicocca**](https://en.unimib.it) — исследования Skills2Job и Skills2Graph
+- [**ADAPT Centre**](https://www.adaptcentre.ie/about/), [**Munster Technological University**]([https://www.adaptcentre.ie/about/](https://www.mtu.ie)) — гибридное сопоставление должностей
+- [**University of Science and Technology of China**](https://en.ustc.edu.cn) - сопоставление способностей кандидата и требований вакансии
+- [**Ozon**](https://www.ozon.ru/), [**Wildberries**](https://www.wildberries.ru), [**МегаМаркет**](https://megamarket.ru) - сопоставление карточек товаров
 
 ### Конференции
 
-- **IJCAI 2021** — публикация Skills2Graph в демонстрационном треке [2].
-- **RecSys in HR 2025**, воркшоп при ACM RecSys — исследование графов знаний для сопоставления должностей [3].
+- [**IJCAI 2021**](https://ijcai-21.org/index.html) — международная совместная конференция по искусственному интеллекту
+- [**RecSys in HR 2025**](https://recsyshr.aau.dk/previous-editions/prague/) — международный воркшоп по рекомендательным системам для управления человеческими ресурсами
+- [**ACM SIGIR — International Conference on Research and Development in Information Retrieval**](https://sigir2026.org/en-AU) — ежегодная международная научная конференция в области информационного поиска
+- [**EMNLP — Conference on Empirical Methods in Natural Language Processing**](https://2026.emnlp.org) — международная научная конференция по обработке естественного языка и машинному обучению 
 
 ### Научные журналы
 
-- **Applied Soft Computing** — Skills2Job, 2021 [1].
-- **Engineering Applications of Artificial Intelligence** — JobEdKG, 2024 [6].
+- [**Applied Soft Computing**](https://www.sciencedirect.com/journal/applied-soft-computing) — Skills2Job, 2021
+- [**Engineering Applications of Artificial Intelligence**](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence) — JobEdKG, 2024
+- [**ACM Transactions on Management Information Systems**](https://dl.acm.org/journal/tmis/about) — Person-Job Fit: Adapting the Right Talent for the Right Job with Joint Representation Learning, 2018
+- [**Entropy**](https://www.mdpi.com/journal/entropy) —  Fine-Grained Semantics-Enhanced Graph Neural Network Model for Person-Job Fit, 2025
 
 ## 2. Обзор литературы
 
-Подобраны 10 публичных работ по подбору кандидатов, графам навыков, неопределённости и реранкингу. Дата обращения — 13.11.2026.
+1. Giabelli A., Malandri L., Mercorio F., Mezzanzanica M., Seveso A. [**Skills2Job: A recommender system that encodes job offer embeddings on graph databases**](https://www.researchgate.net/publication/363409945_Skills2Job_A_Recommender_System_that_Encodes_Job_Offer_Embeddings_on_Graph_Databases_Student_Abstract)
 
-1. Giabelli A., Malandri L., Mercorio F., Mezzanzanica M., Seveso A. **Skills2Job: A recommender system that encodes job offer embeddings on graph databases** // Applied Soft Computing. 2021. Vol. 101. Article 107049. DOI 10.1016/j.asoc.2020.107049. [Карточка университетского репозитория](https://boa.unimib.it/handle/10281/297215).
+   Авторы предлагают Skills2Job — систему, которая по набору навыков пользователя рекомендует подходящие профессии. Исследование опирается на объявления о вакансиях из Великобритании, Франции и Германии. На этих данных обучаются и сравниваются векторные представления, позволяющие учитывать смысловые связи между навыками и профессиями. Дополнительно вычисляется показатель выявленного сравнительного преимущества RCA, отражающий значимость навыка для конкретной профессии в определённой стране. Выбранные эмбеддинги и значения RCA помещаются в графовую базу данных, которая используется для формирования рекомендаций.
 
-   Авторы предлагают систему рекомендаций профессий по набору навыков пользователя. Подход объединяет таксономию ESCO, эмбеддинги и графовую базу данных, а сведения из вакансий позволяют учитывать значимость навыков для разных профессий. Работа служит близким аналогом подбора по компетенциям и показывает, что объединение графа и семантических представлений уже исследовано.
+   Качество выдачи проверяется с участием десяти экспертов рынка труда с помощью метрик Precision@3 и nDCG. Авторы сообщают о высокой точности рекомендаций и согласованности их порядка с экспертными оценками. Для ВКР исследование представляет интерес как пример объединения семантических представлений, значимости навыков и графового хранения данных. При этом его целевой результат — рекомендации профессий по указанным навыкам. Применимость такого подхода к проектным ролям при неполных профилях кандидатов требует отдельного эксперимента.
 
-2. Giabelli A., Malandri L., Mercorio F., Mezzanzanica M., Seveso A. **Skills2Graph: Processing million Job Ads to face the Job Skill Mismatch Problem** // Proceedings of IJCAI 2021. Demo Track. P. 4984–4987. DOI 10.24963/ijcai.2021/708. [Публикация](https://ijcai.org/proceedings/2021/708).
+2. Giabelli A., Malandri L., Mercorio F., Mezzanzanica M., Seveso A. [**Skills2Graph: Processing million Job Ads to face the Job Skill Mismatch Problem**](https://ijcai.org/proceedings/2021/708)
 
    Статья описывает инструмент, который обрабатывает большой массив вакансий и рекомендует профессии по указанным навыкам. Для установления соответствий используются совместная встречаемость навыков и семантические представления, а качество рекомендаций оценивают эксперты рынка труда. Работа связана со Skills2Job и дополняет её описанием прикладного инструмента.
 
-3. Zadykian V., Andrade B., Afli H. **Towards Explainable Job Title Matching: Leveraging Semantic Textual Relatedness and Knowledge Graphs** // RecSys in HR 2025. CEUR Workshop Proceedings. Vol. 4046. [Полный текст](https://ceur-ws.org/Vol-4046/RecSysHR2025-paper_8.pdf).
+3. Zadykian V., Andrade B., Afli H. [**Towards Explainable Job Title Matching: Leveraging Semantic Textual Relatedness and Knowledge Graphs**](https://ceur-ws.org/Vol-4046/RecSysHR2025-paper_8.pdf)
 
-   Авторы исследуют сопоставление названий должностей, которые могут различаться по формулировке, но быть близкими по смыслу. Предлагаемый подход объединяет текстовые эмбеддинги с представлениями графа знаний, получаемыми с помощью графовой нейронной сети. Это позволяет учитывать одновременно содержание названия и его связи с профессиональной областью. Работа полезна для нормализации названий ролей, однако семантическая близость должностей сама по себе не определяет соответствие конкретного кандидата требованиям.
+   Исследование посвящено сопоставлению названий должностей, которые могут обозначать близкие профессиональные функции, даже если не имеют общих слов. Авторы рассматривают семантическую связанность текстов STR, позволяющую учитывать не только сходство формулировок, но и функциональные и иерархические отношения между должностями. Предложенная гибридная архитектура объединяет текстовые представления Sentence-BERT с представлениями графа знаний о должностях и навыках. Графовые представления формируются с использованием нейронных сетей, а явные связи графа позволяют прослеживать основания полученных соответствий. Обучающие пары создаются автоматически на основе близости описаний должностей, без ручной разметки каждой пары.
 
-4. Zhu C., Zhu H., Xiong H. et al. **Person-Job Fit: Adapting the Right Talent for the Right Job with Joint Representation Learning** // ACM Transactions on Management Information Systems. 2018. [Авторская версия](https://arxiv.org/abs/1810.04040).
+   Особенность экспериментальной оценки — разделение пар на группы с низкой, средней и высокой семантической связанностью. Это позволяет выявлять различия в работе моделей, которые скрываются за общей метрикой качества. Для группы с высокой связанностью авторы сообщают о снижении среднеквадратической ошибки RMSE на 25 % относительно сильных базовых моделей. Этот результат относится к указанной группе и не означает такого же улучшения на всех данных. Для ВКР полезны объединение текста с графовыми связями и оценка качества по отдельным группам примеров. Однако работа сопоставляет названия должностей, поэтому соответствие навыков и пожеланий конкретного кандидата требованиям проектной роли необходимо оценивать отдельно.
+
+4. Zhu C., Zhu H., Xiong H. et al. [**Person-Job Fit: Adapting the Right Talent for the Right Job with Joint Representation Learning**](https://arxiv.org/pdf/1810.04040)
 
    В статье рассматривается оценка соответствия опыта кандидата требованиям вакансии с помощью совместного обучения представлений. Модель PJFNN использует свёрточные нейронные сети для обработки текстов и обучается на исторических данных о заявлениях на вакансии. Такой подход позволяет сопоставлять резюме и требования по смыслу, выходя за пределы совпадения ключевых слов. 
 
-5. Qin C., Zhu H., Xu T. et al. **Enhancing Person-Job Fit for Talent Recruitment: An Ability-aware Neural Network Approach** // SIGIR 2018. P. 25–34. DOI 10.1145/3209978.3210025. [Полный текст авторов](https://dm.ustc.edu.cn/paper_pdf/2018/Chuan-Qin-SIGIR.pdf).
+5. Qin C., Zhu H., Xu T. et al. [**Enhancing Person-Job Fit for Talent Recruitment: An Ability-aware Neural Network Approach**](https://arxiv.org/pdf/1812.08947)
 
    Авторы предлагают модель APJFNN, которая оценивает соответствие кандидата вакансии с учётом отдельных способностей и требований. Иерархический механизм внимания выделяет значимые фрагменты опыта кандидата и учитывает неодинаковую важность требований работы. Благодаря этому итоговая оценка опирается на более детальные соответствия, чем общая близость двух текстов. 
 
-6. Fettach Y., Bahaj A., Ghogho M. **JobEdKG: An uncertain knowledge graph-based approach for recommending online courses and predicting in-demand skills based on career choices** // Engineering Applications of Artificial Intelligence. 2024. Vol. 131. Article 107779. DOI 10.1016/j.engappai.2023.107779. [Университетский репозиторий](https://atlas.um6p.ma/p/en/research-outputs/jobedkg-an-uncertain-knowledge-graph-based-approach-for-recommend-2).
+6. Fettach Y., Bahaj A., Ghogho M. [**JobEdKG: An uncertain knowledge graph-based approach for recommending online courses and predicting in-demand skills based on career choices**](https://atlas.um6p.ma/p/en/research-outputs/jobedkg-an-uncertain-knowledge-graph-based-approach-for-recommend-2)
 
    Работа посвящена графу знаний, связывающему профессии, навыки и образовательные курсы. Авторы учитывают неопределённость фактов графа и используют полученные связи для рекомендаций обучения и прогнозирования востребованных навыков. Неопределённость здесь характеризует связи, извлечённые из источников, что следует отличать от отсутствия сведений о компетенции конкретного кандидата.
 
-7. Xue X., Wang J., Ma B. et al. **Fine-Grained Semantics-Enhanced Graph Neural Network Model for Person-Job Fit** // Entropy. 2025. Vol. 27, no. 7. Article 703. DOI 10.3390/e27070703. [Полный текст](https://pmc.ncbi.nlm.nih.gov/articles/PMC12294162/).
+7. Xue X., Wang J., Ma B. et al. [**Fine-Grained Semantics-Enhanced Graph Neural Network Model for Person-Job Fit**](https://pmc.ncbi.nlm.nih.gov/articles/PMC12294162/)
 
    Авторы предлагают модель FSEGNN-PJF для оценки соответствия резюме и вакансии. Граф строится по совместной встречаемости слов, а графовое внимание и механизмы обработки текста помогают учитывать структурные связи и выделять значимую информацию. Подход проверяется на реальных данных о подборе персонала.
 
-8. Sun W., Yan L., Ma X. et al. **Is ChatGPT Good at Search? Investigating Large Language Models as Re-Ranking Agents** // EMNLP 2023. [Полный текст](https://aclanthology.org/2023.emnlp-main.923.pdf).
+8. Sun W., Yan L., Ma X. et al. [**Is ChatGPT Good at Search? Investigating Large Language Models as Re-Ranking Agents**](https://aclanthology.org/2023.emnlp-main.923.pdf)
 
    Статья исследует применение больших языковых моделей для повторного ранжирования результатов поиска. Модель получает запрос и предварительно найденный список текстов, после чего переупорядочивает их по релевантности. Авторы экспериментально сравнивают такой подход с другими методами ранжирования. 
 
-9. Huo S., Parry A., Ganguly D., Clarke C. L. A. **Optimal Re-Ranking Depth** // SIGIR 2026. P. 3799–3804. DOI 10.1145/3805712.3809953. [Авторская версия](https://arxiv.org/abs/2611.05908).
+9. Huo S., Parry A., Ganguly D., Clarke C. L. A. [**Optimal Re-Ranking Depth**](https://arxiv.org/abs/2611.05908) 
 
    Авторы исследуют, сколько результатов первоначального поиска следует передавать на повторное ранжирование. Работа показывает, что подходящая глубина реранкинга зависит от запроса, поэтому единый размер списка может приводить к лишним затратам или потере качества. Рассматриваются способы выбора глубины с использованием оценок релевантности.
 
-10. Genc A. C., Korukluoglu E. K., Allan J. **Adaptive Re-Ranking**. Препринт arXiv:2606.25249. 2026. [Текст](https://arxiv.org/abs/2606.25249).
+10. Genc A. C., Korukluoglu E. K., Allan J. [**Adaptive Re-Ranking**](https://arxiv.org/abs/2606.25249)
 
    В препринте рассматривается выбор стратегии ранжирования в зависимости от запроса и соотношения качества и вычислительных затрат. Предлагаемый маршрутизатор выбирает между поиском BM25 и нейронными моделями повторного ранжирования разной стоимости. Эксперименты показывают, что выигрыш в скорости может сопровождаться изменением качества, причём результат зависит от набора данных.
 
@@ -101,11 +108,11 @@
 
 ### Выводы по сравнению
 
-Использование графа само по себе не устанавливает новизну. Предполагаемый вклад — правило отбора ролей, учитывающее неполноту данных и риск исключения подходящих вариантов. Его преимущество необходимо проверить при одинаковом размере списка и одинаковом LLM-реранкере. Сравниваются векторный топ-20, топ-20 по покрытию компетенций и предлагаемый метод. Измеряются Precision@5, сохранение подходящих ролей, время и токены.
+Предполагаемый вклад — правило отбора ролей, учитывающее неполноту данных и риск исключения подходящих вариантов. Его преимущество необходимо проверить при одинаковом размере списка и одинаковом LLM-реранкере. Сравниваются векторный топ-20, топ-20 по покрытию компетенций и предлагаемый метод. Измеряются Precision@5, сохранение подходящих ролей, время и токены.
 
 ## 4. Итоги
 
-**Итоговая тема ВКР** — «Разработка алгоритма подбора кандидатов на проектные роли на основе графа компетенций при неполных данных профиля».
+**Итоговая тема ВКР** — «Разработка модуля подбора кандидатов на проектные роли на основе графа компетенций при неполных данных профиля».
 
 **УДК для тезиса** — 519.17, теория графов.
 
